@@ -1,6 +1,7 @@
 import { program } from "commander";
 import { name, version } from "@@/package.json";
 
+import { publish } from "@/actions/publish";
 import { thumbnail } from "@/actions/thumbnail";
 import { download_list } from "@/actions/download_list";
 import { download_single, video_id_option } from "@/actions/download_single";
@@ -14,6 +15,11 @@ program
   .command("init")
   .description("创建运行时配置文件")
   .action(create_config_file);
+
+program
+  .command("publish")
+  .description("发布小视频")
+  .action(publish);
 
 program
   .command("single")
