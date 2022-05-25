@@ -18,7 +18,7 @@ export default async function download_single(videoId) {
       stdout_title.stderr.on("data", (error) => reject(error.toString()));
     });
     const decode_title = iconv_lite.decode(video_title, "cp936").replace(/\n/ig, "").replace(/\%/ig, "");
-    const download_dir_path = path.resolve(__dirname, `../../statics/${decode_title} #鸡汤 #励志 .%(ext)s`);
+    const download_dir_path = path.resolve(__dirname, `../../statics/${decode_title} #美女 #搞笑 .%(ext)s`);
     const download_mission = spawn(youtube_dl, ["--format", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best", "-o", download_dir_path, video_source_url, ...proxy_config], { cwd: process.cwd() });
     await new Promise((resolve, reject) => {
       download_mission.on("close", resolve);
