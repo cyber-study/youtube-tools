@@ -1,6 +1,7 @@
 import { program } from "commander";
 import { name, version } from "@@/package.json";
 
+import { login } from "@/actions/login";
 import { publish } from "@/actions/publish";
 import { thumbnail } from "@/actions/thumbnail";
 import { download_list } from "@/actions/download_list";
@@ -20,6 +21,11 @@ program
   .command("publish")
   .description("发布小视频")
   .action(publish);
+
+program
+  .command("login")
+  .description("头条号账号登录")
+  .action(login);
 
 program
   .command("single")
