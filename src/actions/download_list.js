@@ -7,7 +7,7 @@ import download_single_task from "@/utils/download_single_task";
 // export const test_command_option = new Option("-t,--test_option <string>").default("test_option_value");
 
 export async function download_list() {
-  const channel_url = "https://www.youtube.com/channel/UCl-G3c7OGJ1O_CvyxbpARqA/videos?view=0&sort=p&flow=grid";
+  const channel_url = "https://www.youtube.com/channel/UCDyYJmCdChpMBl1l_EIlU1Q/videos";
   eval(await get_list_data(channel_url));
   const video_list = ytInitialData.contents.twoColumnBrowseResultsRenderer.tabs[1].tabRenderer.content.sectionListRenderer.contents[0].itemSectionRenderer.contents[0].gridRenderer.items;
   const format_download_task = video_list.slice(0, video_list.length - 2).map(async ({ gridVideoRenderer }) => {
